@@ -1,0 +1,239 @@
+@font-face {
+  font-family: "MyCustomFont";
+  src: url('https://cdn.glitch.global/fdb54953-0b9f-474d-9306-a5dd00c4e25a/Hey%20Guys!%20Demo.otf?v=1727351218815');
+  font-weight: normal;
+  font-style: normal;
+}
+body, html {
+  height: 100%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+
+/* Nav BAr */
+.navbar {
+  position: relative;
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  height: auto;
+  z-index: 1000;
+  
+}
+
+.Left-content {
+  width: 4vw;
+  margin-left: 2vw;
+}
+
+.link2{
+  margin-left: 10vw;
+}
+.link2:hover,
+.link3:hover,
+.link4:hover,
+.link5:hover {
+  color: #f8a5e3;
+}
+
+.link5{
+  margin-right: 10vw;
+}
+
+.name {
+  display: flex;
+  margin: 7vh auto 0 auto;
+  align-items: center;
+  width: 35%;
+  position: relative; /* Add relative positioning */
+  z-index: 2; /* Ensure it stays on top of the background */
+}
+.main-page .background {
+  position: fixed; /* Ensures the background stays fixed in place */
+  top: 0;
+  left: 0;
+  width: 100%; /* Covers the entire width */
+  height: 100%; /* Covers the entire height */
+  z-index: 1; /* Places it below the content */
+  object-fit: cover; /* Ensures the image scales proportionally */
+}
+
+.main-page {
+  background: url('pics/background.png') no-repeat center center fixed; /* Background image */
+  background-size: cover; /* Ensures it fills the entire screen */
+}
+/* Ensure the background image is positioned and layered properly */
+
+.navbar a{
+    padding: 3vw;
+    color: white;
+    font-size: 4vh;
+    font-family: 'MyCustomFont';
+    text-decoration: none;
+    resize: none;
+ }
+
+
+ 
+
+/* Row Container */
+.row {
+  
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Makes it full screen height */
+  gap: 6vh; /* Adds 3vh of space between the columns */
+  padding: 6vh; /* Adds 3vh of space around the entire row */
+  box-sizing: border-box; /* Ensures padding doesn't affect row size */
+}
+
+/* Column Styling */
+.column {
+  flex: 1; /* Each column takes up equal space */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  padding: 6vh; /* Adds 3vh of space around the image inside each column */
+  box-sizing: border-box; /* Ensures padding doesn't affect column size */
+}
+
+/* Image Styling */
+img {
+  max-width: 100%; /* Ensures image scales to fit column */
+  max-height: 100%; /* Ensures image doesn't overflow vertically */
+  object-fit: contain; /* Ensures the aspect ratio is maintained */
+  padding-bottom: 6vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* Book */
+.book {
+ 
+  height: 75vh;  /* Adjust height to be relative to the viewport height */
+  width: calc(75vh / 1.41);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+ 
+  margin-top: auto; /* Push the book to the center */
+  margin-bottom: auto; /* Ensure the book stays vertically centered */
+  
+  transition: transform 0.5s;
+  padding-bottom: 5vh; 
+  
+}
+
+
+.paper {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  margin-top: auto; /* Push the book to the center */
+  margin-bottom: auto; /* Ensure the book stays vertically centered */
+  
+  transition: transform 0.5s;
+  padding-bottom: 5vh; 
+  
+}
+
+.front,
+.back {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.front {
+  z-index: 1;
+  backface-visibility: hidden;
+  border-left: 3px solid powderblue;
+}
+
+.back {
+  z-index: 0;
+}
+
+.front-content,
+.back-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-content {
+  transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+  transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+  position: absolute; /* Make buttons absolute to the wrapper */
+  top: 50%; /* Vertically center the buttons */
+  transform: translateY(-50%); /* Adjust to perfectly center vertically */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20vh; /* Adjust the size of the buttons */
+  color: white;
+  transition: transform 0.5s;
+  
+}
+#prev-btn {
+  left: 25vw; /* Position the previous button to the left of the book */
+}
+
+#next-btn {
+  right:25vw; /* Position the next button to the right of the book */
+}
+
+
+button:focus {
+  outline: none;
+}
+
+button:hover i {
+  color: #f8a5e3;
+}
+
+i {
+  font-size: 50px;
+  color: white;
+}
+
+/* Paper stack order */
+#p1 {
+  z-index: 3;
+}
+
+#p2 {
+  z-index: 2;
+}
+
+#p3 {
+  z-index: 1;
+}
